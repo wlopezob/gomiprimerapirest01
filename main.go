@@ -26,7 +26,7 @@ func main() {
 
 	api.RoutesUp(app)
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World 01👋!")
+		return c.SendString("Hello, World 02👋!")
 	})
 
 	app.Listen(":3000")
