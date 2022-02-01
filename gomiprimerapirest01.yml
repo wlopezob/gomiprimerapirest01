@@ -10,6 +10,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
+  DockerImageName: 'golang-340003/gomiprimerapirest01'
 
 stages:
 - stage: Build
@@ -27,6 +28,15 @@ stages:
         command: 'login'
         addPipelineData: false
         addBaseImageData: false
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'gcr-tutorial'
+        repository: '$(DockerImageName)'
+        command: 'buildAndPush'
+        Dockerfile: '**/dockerfile'
+        addPipelineData: false
+        addBaseImageData: false
+
     # - task: Docker@2
     #   displayName: Build an image
     #   inputs:
