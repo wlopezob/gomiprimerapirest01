@@ -21,12 +21,18 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - task: Docker@2
-      displayName: Build an image
       inputs:
-        containerRegistry: 'midockerhub'
-        repository: 'wlopezob/gomiprimerapirest01'
-        command: 'build'
-        Dockerfile: '**/dockerfile'
-        tags: '$(tag)'
+        containerRegistry: 'gcr-tutorial'
+        command: 'login'
         addPipelineData: false
         addBaseImageData: false
+    # - task: Docker@2
+    #   displayName: Build an image
+    #   inputs:
+    #     containerRegistry: 'midockerhub'
+    #     repository: 'wlopezob/gomiprimerapirest01'
+    #     command: 'build'
+    #     Dockerfile: '**/dockerfile'
+    #     tags: '$(tag)'
+    #     addPipelineData: false
+    #     addBaseImageData: false
