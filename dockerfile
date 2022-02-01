@@ -5,7 +5,7 @@ WORKDIR /app
 #copiamos todos los archivos
 ADD . /app
 #construimos nuestra app
-RUN makefile build
+RUN make build
 #exponemos el puerto 3000 del app
 EXPOSE 3000
 #arrancamos la app
