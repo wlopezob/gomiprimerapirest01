@@ -21,6 +21,7 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - task: Docker@2
+      displayName: "Docker Login"
       inputs:
         containerRegistry: 'gcr-tutorial'
         command: 'login'
