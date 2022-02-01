@@ -35,6 +35,7 @@ stages:
         repository: '$(DockerImageName)'
         command: 'buildAndPush'
         Dockerfile: '**/dockerfile'
+        tags: 'latest'
         addPipelineData: false
         addBaseImageData: false
 
